@@ -8,16 +8,20 @@ const socket = io.connect('http://localhost:3000');
 function App() {
   const [userName, setUserName] = useState('');
   const [room, setRoom] = useState('');
+  const [showChat, setShowChat] = useState(false)
 
   const joinRoom = () => {
     if (userName !== '' && room !== '') {
       socket.emit('joinRoom', room);
+      setShowChat(true)
     }
   };
 
   return (
     <div className="App">
-      <h3>Ahmed Chat</h3>
+      {!showChat ? (
+      <div>
+        <h3>Ahmed Chat</h3>
       <input
         type="text"
         placeholder="Hi Ahmed "
@@ -33,7 +37,14 @@ function App() {
         }}
       />
       <button onClick={joinRoom}>Join A Room</button>
+      </div>
+      )
+    :
+    (
       <Chat socket={socket} userName={userName} room={room} />
+      )
+    }
+
     </div>
   );
 }
