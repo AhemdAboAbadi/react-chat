@@ -190,3 +190,7 @@ body {
   opacity: 0 !important;
 }
 
+.message {
+  display: flex;
+  flex-direction: column;
+}

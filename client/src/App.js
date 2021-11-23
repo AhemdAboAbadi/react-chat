@@ -20,11 +20,11 @@ function App() {
   return (
     <div className="App">
       {!showChat ? (
-      <div>
+      <div className="joinChatContainer"> 
         <h3>Ahmed Chat</h3>
       <input
         type="text"
-        placeholder="Hi Ahmed "
+        placeholder="Inter Yor Name"
         onChange={(e) => {
           setUserName(e.target.value);
         }}
