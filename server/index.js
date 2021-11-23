@@ -22,6 +22,12 @@ io.on("connection" , (socket) => {
     console.log(`user with id ${socket.id} join room: ${data}`);
   })
 
+
+  socket.on ("sendMessage" , (data) => {
+    console.log(data);
+  })
+
+
   socket.on("disconnect" ,() => {
     console.log("user Disconnected" , socket.id);
   })
