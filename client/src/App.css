@@ -129,6 +129,7 @@ body {
 
 #other {
   justify-content: flex-end;
+  align-items: flex-end;
 }
 
 #other .message-content {
@@ -138,6 +139,8 @@ body {
 
 #other .message-meta {
   justify-content: flex-end;
+      align-content: flex-end;
+
   margin-right: 5px;
 }
 
@@ -193,4 +196,5 @@ body {
 .message {
   display: flex;
   flex-direction: column;
+
 }
